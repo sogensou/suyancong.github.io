@@ -356,7 +356,8 @@ section + section { border-top: 1px solid var(--border); }
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--border);
-  background: var(--bg-sunken);
+  /* 图片背景已烘成浅色主题的 --bg，浅色下与页面无缝衔接 */
+  background: var(--bg);
 }
 
 @media (max-width: 40rem) {
