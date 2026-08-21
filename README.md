@@ -53,7 +53,7 @@ curl -s http://suyancong.gitlink.net | grep -o '<title>.*</title>'
 
 ```
 .
-├── index.html          首页：简介 · 研究方向 · 精选成果 · 近期动态 · 学术兼职 · 项目 · 联系
+├── index.html          首页：简介 · 研究方向 · 精选成果 · 近期动态 · 学术兼职
 ├── publications.html   研究成果：期刊论文 · 会议论文 · 策展参展 · 译著与随笔
 ├── research.html       科研项目：纵向课题 · 横向项目 · 教研教改
 ├── teaching.html       教学：主讲课程 · 学位论文 · 毕业设计 · 学科竞赛 · 大创项目

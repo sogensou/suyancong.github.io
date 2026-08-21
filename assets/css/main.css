@@ -428,11 +428,20 @@ section + section { border-top: 1px solid var(--border); }
   gap: 1rem;
 }
 
+/* 固定两列（研究方向：两行两列），窄屏退回单列 */
+.cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 44rem) {
+  .cards--2 { grid-template-columns: 1fr; }
+}
+
 .card {
   padding: 1.35rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg-elev);
+  /* 弹性列 + 标签行 margin-top:auto，同一行内文字长短不一时标签仍贴底对齐 */
+  display: flex;
+  flex-direction: column;
   transition: border-color 0.15s ease, transform 0.15s ease,
     box-shadow 0.15s ease;
 }
@@ -460,7 +469,7 @@ a.card:hover {
 }
 
 .card__meta {
-  margin-top: 0.9rem;
+  margin-top: auto;
   padding-top: 0.75rem;
   border-top: 1px solid var(--border);
   display: flex;
