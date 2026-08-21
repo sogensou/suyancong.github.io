@@ -26,6 +26,12 @@ POST https://gitlink.org.cn/api/site_pages/softbot_build
 
 推送到 `master` 后约 20–60 秒生效。仓库根目录的 `index.html` 就是站点首页。
 
+### 仓库只有一个 webhook，别误删
+
+`id=54336`，type `softbot`，指向上面那个 `softbot_build` 端点 —— **它就是部署本身**，
+删掉站点就不再更新了。（原先还有一个建木 CI 的 `jianmu.gitlink.org.cn/webhook/projects/sync`，
+因为仓库 `open_devops=false`、纯静态站点也用不上流水线，已于 2026-08-21 移除。）
+
 ### ⚠️ webhook 显示 `fail` 通常是假失败
 
 GitLink 后台的 webhook 投递记录经常显示失败，响应体是：
