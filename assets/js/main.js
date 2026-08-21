@@ -33,6 +33,23 @@
     });
   }
 
+  /* ---- 页脚「最近更新时间」--------------------------------------------- */
+  /* 取自 HTTP 的 Last-Modified 响应头（GitLink Pages 会正确下发），
+     因此改完内容推上去就自动更新，不用手工维护。
+     HTML 里写死的那个日期只是没有脚本时的兜底值。 */
+  var stamp = document.getElementById("site-updated");
+  if (stamp) {
+    var d = new Date(document.lastModified);
+    if (!isNaN(d.getTime()) && d.getFullYear() >= 2000) {
+      var pad = function (n) { return n < 10 ? "0" + n : "" + n; };
+      var day =
+        d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+      stamp.textContent = day + " " + pad(d.getHours()) + ":" + pad(d.getMinutes());
+      stamp.setAttribute("datetime", day);
+      stamp.parentNode.hidden = false;
+    }
+  }
+
   /* ---- 当前页导航高亮 ------------------------------------------------- */
   var here = location.pathname.replace(/\/$/, "/index.html").split("/").pop();
   Array.prototype.forEach.call(

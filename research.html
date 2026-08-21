@@ -10,7 +10,8 @@
 <meta property="og:title" content="科研项目 · 苏彦聪 Yancong Su">
 <meta property="og:description" content="苏彦聪主持与参与的纵向课题、横向项目与教研教改项目列表。">
 <meta property="og:url" content="http://suyancong.gitlink.net/">
-<link rel="icon" href="assets/img/avatar.png">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <!-- 首帧就套用已保存的主题，避免深色模式下白屏闪一下 -->
 <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <link rel="stylesheet" href="assets/css/main.css">
@@ -110,12 +111,9 @@
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <span>© 2026 苏彦聪 Yancong Su · 厦门理工学院影视与传播学院</span>
-    <span class="site-footer__links">
-      <a href="mailto:syc@xmut.edu.cn">syc@xmut.edu.cn</a>
-      <a href="https://www.gitlink.org.cn/suyancong" rel="noopener">GitLink</a>
-      <a href="https://www.gitlink.org.cn/suyancong/suyancong.gitlink.net" rel="noopener">本站源码</a>
-    </span>
+    <p>© 2026 苏彦聪 Yancong Su</p>
+    <!-- 更新时间由 main.js 从 HTTP Last-Modified 填入；没有脚本时整行不显示，避免给出过期日期 -->
+    <p class="site-footer__updated" hidden>本站最近更新时间：<time id="site-updated"></time></p>
   </div>
 </footer>
 

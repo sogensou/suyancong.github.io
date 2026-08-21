@@ -181,11 +181,14 @@ section + section { border-top: 1px solid var(--border); }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-3);
-  margin-bottom: 1.75rem;
+  /* 跟在上一段内容后面时需要留出呼吸；作为容器首个元素或紧随页内目录时不需要 */
+  margin: 3rem 0 1.75rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
+.section-title:first-child,
+.toc + .section-title { margin-top: 0; }
 .section-title::after {
   content: "";
   flex: 1;
@@ -500,6 +503,7 @@ a.card:hover {
   grid-template-columns: 3.5rem 1fr;
   gap: 1rem;
 }
+.pub:first-child { border-top: 0; }
 .pub:last-child { border-bottom: 1px solid var(--border); }
 
 .pub__type {
@@ -568,6 +572,7 @@ a.card:hover {
   padding: 1rem 0;
   border-top: 1px solid var(--border);
 }
+.timeline > li:first-child { border-top: 0; }
 .timeline > li:last-child { border-bottom: 1px solid var(--border); }
 
 .timeline__when {
@@ -608,15 +613,18 @@ a.card:hover {
 }
 .site-footer .wrap {
   max-width: var(--wide);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  align-items: center;
-  justify-content: space-between;
+  text-align: center;
 }
-.site-footer a { color: var(--text-2); }
-.site-footer a:hover { color: var(--accent); }
-.site-footer__links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.site-footer p { margin: 0; }
+.site-footer__updated {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+.site-footer__updated time {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
 
 /* --------------------------------------------------------------------------
    11. 数字概览
@@ -670,6 +678,7 @@ a.card:hover {
   border-top: 1px solid var(--border);
   font-size: 0.94rem;
 }
+.entries > li:first-child { border-top: 0; }
 .entries > li:last-child { border-bottom: 1px solid var(--border); }
 
 .entries > li::before {
@@ -755,7 +764,9 @@ a.card:hover {
   padding-bottom: 0.3rem;
   border-bottom: 2px solid var(--accent-soft);
 }
-.subhead:first-of-type { margin-top: 0; }
+/* 紧跟在章节标题下的三级标题不再另加上边距，间距统一交给章节标题的 margin-bottom */
+.subhead:first-of-type,
+.section-title + .subhead { margin-top: 0; }
 
 /* --------------------------------------------------------------------------
    14. 简历式紧凑列表

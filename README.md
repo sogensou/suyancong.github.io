@@ -59,11 +59,32 @@ curl -s http://suyancong.gitlink.net | grep -o '<title>.*</title>'
 ├── teaching.html       教学：主讲课程 · 学位论文 · 毕业设计 · 学科竞赛 · 大创项目
 ├── cv.html             简历：学习经历 · 工作经验 · 学术兼职 · 社会兼职 · 荣誉表彰
 └── assets/
-    ├── css/main.css    全站唯一样式表（设计令牌 + 组件，共 14 节）
-    ├── js/main.js      仅两件事：深浅色主题切换、当前页导航高亮
-    ├── img/avatar.png  头像 400×400
+    ├── css/main.css    全站唯一样式表（设计令牌 + 组件）
+    ├── js/main.js      三件事：主题切换、导航高亮、页脚更新时间
+    ├── img/
+    │   ├── avatar.png            首页头像 400×400
+    │   ├── favicon.png           浏览器标签页图标 64×64（裁紧到脸部）
+    │   └── apple-touch-icon.png  iOS 添加到主屏图标 180×180
     └── files/          放 PDF 全文、简历附件等
 ```
+
+### 页脚的「最近更新时间」
+
+由 `main.js` 从 HTTP 响应的 `Last-Modified` 头读取并填入，**不需要手工维护**：
+GitLink Pages 会把该头设为部署时间，所以推一次就自动刷新。
+禁用 JavaScript 时整行不显示，以免留下一个过期的死日期。
+
+### 分割线的约定
+
+页面上的横线只有三种来源，改版式时注意别叠在一起：
+
+1. `.section-title::after` —— 章节标题右侧那条细线
+2. 列表内部的 `border-top`（`.pub` / `.entries > li` / `.timeline > li` / `.courses > li` / `.roles > li`）
+   —— **每个列表的首项都要 `border-top: 0`**，否则会和上面的章节标题线挤成两条
+3. 列表末项的 `border-bottom` —— 用来收口
+
+`.section-title` 有 `3rem` 上边距把它和上一段内容隔开；作为容器首个元素、
+或紧跟在页内目录 `.toc` 后面时归零，避免间距翻倍。
 
 **没有构建、没有依赖、没有 CDN**。字体全部使用系统字体栈（国内网络不加载 Google Fonts），
 图标是内联 SVG。直接改 HTML 就是改网站。
@@ -110,9 +131,15 @@ python3 -m http.server 8765
 ⚠️ **导航栏和页脚在 5 个 HTML 文件里各有一份**，这是"零构建"的代价。
 增删导航项、改页脚信息时，5 个文件都要改，别漏。
 
+同理，**学术兼职在 `index.html` 和 `cv.html` 里各有一份**，改一处记得同步另一处。
+
 ### 换头像
 
 替换 `assets/img/avatar.png`（正方形，400×400 左右即可）。
+标签页图标是另外两个文件（`favicon.png` / `apple-touch-icon.png`），
+它们裁得更紧、只留脸部，这样缩到 16px 还认得出来——换头像时记得一并重做。
+
+三张图的背景都是站点浅色背景 `#fbfaf8`，所以浅色主题下头像和页面是连成一片的。
 
 ### 配色与排版
 
