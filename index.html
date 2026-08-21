@@ -1,12 +1,360 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>模板</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>苏彦聪 Yancong Su · 个人主页</title>
+<meta name="description" content="苏彦聪，厦门理工学院影视与传播学院副教授，日本神户大学博士。主要从事人文智能、计算艺术、网络与新媒体、智能传播等应用研究。">
+<meta name="author" content="苏彦聪 Yancong Su">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="苏彦聪 Yancong Su · 个人主页">
+<meta property="og:description" content="苏彦聪，厦门理工学院影视与传播学院副教授，日本神户大学博士。主要从事人文智能、计算艺术、网络与新媒体、智能传播等应用研究。">
+<meta property="og:url" content="http://suyancong.gitlink.net/">
+<link rel="icon" href="assets/img/avatar.png">
+<!-- 首帧就套用已保存的主题，避免深色模式下白屏闪一下 -->
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <div>这是标准模板 好的 测试一下 试试看Bot有没有自动部署</div>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header">
+  <nav class="nav" aria-label="主导航">
+    <a class="nav__brand" href="index.html">苏彦聪</a>
+    <ul class="nav__links">
+      <li><a href="index.html" aria-current="page">首页</a></li>
+      <li><a href="publications.html">研究成果</a></li>
+      <li><a href="research.html">科研项目</a></li>
+      <li><a href="teaching.html">教学</a></li>
+      <li><a href="cv.html">简历</a></li>
+    </ul>
+    <button class="theme-toggle" type="button" aria-label="切换到深色模式">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+    </button>
+  </nav>
+</header>
+<main id="main">
+
+  <!-- ====================== Hero ====================== -->
+  <section class="hero">
+    <div class="wrap wrap--wide">
+      <div class="hero__grid">
+        <div>
+          <h1 class="hero__name">苏彦聪</h1>
+          <div class="hero__name-en">Su Yancong</div>
+
+          <p class="hero__tagline">
+            把计算方法带进人文与艺术的现场 —— 从交互装置、数据可视化，
+            到影像的量化分析与 AI 赋能的教学系统。
+          </p>
+
+          <ul class="hero__affil">
+            <li><span class="label">现职</span><span>厦门理工学院 影视与传播学院 · <strong>副教授</strong></span></li>
+            <li><span class="label">学历</span><span>日本国立神户大学 国际文化学研究科 · <strong>博士</strong></span></li>
+            <li><span class="label">方向</span><span>人文智能 · 计算艺术 · 网络与新媒体 · 智能传播</span></li>
+            <li><span class="label">邮箱</span><span><a href="mailto:syc@xmut.edu.cn">syc@xmut.edu.cn</a></span></li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn btn--primary" href="publications.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              研究成果
+            </a>
+            <a class="btn" href="cv.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              完整简历
+            </a>
+            <a class="btn" href="mailto:syc@xmut.edu.cn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              邮件联系
+            </a>
+            <a class="btn" href="https://www.gitlink.org.cn/suyancong" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              GitLink
+            </a>
+          </div>
+        </div>
+
+        <img class="hero__avatar" src="assets/img/avatar.png" width="132" height="132"
+             alt="苏彦聪的头像">
+      </div>
+
+      <div class="stats">
+        <div><b>11</b><span>期刊论文</span></div>
+        <div><b>39</b><span>会议论文</span></div>
+        <div><b>21</b><span>主持课题</span></div>
+        <div><b>7</b><span>策展参展</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== 关于 ====================== -->
+  <section id="about">
+    <div class="wrap">
+      <h2 class="section-title">关于</h2>
+      <p>
+        我在厦门理工学院影视与传播学院任副教授，2014 年于日本国立神户大学国际文化学研究科
+        取得博士学位（计算机与通信专业）。研究长期落在计算方法与人文艺术的交界处：
+        早年从加速度信号的倒谱分析做人体行为与属性识别，其后转向可穿戴增强现实、
+        交互装置与数据可视化创作，近年集中在人文智能——大语言模型如何进入人文研究与教学的实际流程。
+      </p>
+      <p>
+        比起把 AI 当成加速器，我更关心它作为一种研究方法能不能站得住：
+        指标是否可复现、标注是否可验证、定量结论与人文阐释之间的张力如何处理。
+        当前在做的两件事，一是中国电影三大奖作品的镜头与色彩计量数据集，
+        二是面向 C-STEAM 课程的 LLM 教学支持系统。
+      </p>
+      <p>
+        教学上主讲《人工智能导论》《人工智能应用与实践》《数字影音制作》等课程，
+        同时担任中国计算机学会（CCF）高级会员、YOCSEF 厦门分论坛主席（2025–2026）、
+        计算艺术分会执行委员。
+      </p>
+    </div>
+  </section>
+
+  <!-- ====================== 研究方向 ====================== -->
+  <section id="research">
+    <div class="wrap wrap--wide">
+      <h2 class="section-title">研究方向</h2>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card__num">01</div>
+          <h3 class="card__title">人文智能</h3>
+          <p class="card__body">
+            AI 与人文学科的交叉地带：既把大语言模型当作文本分析、知识组织与教学支持的方法论工具，
+            也从人文视角反思生成式 AI 的创作主体性、算法偏见与价值对齐。
+          </p>
+          <div class="card__meta"><span class="tag">LLM</span><span class="tag tag--muted">C-STEAM</span><span class="tag tag--muted">AI 伦理</span></div>
+        </div>
+
+        <div class="card">
+          <div class="card__num">02</div>
+          <h3 class="card__title">计算艺术</h3>
+          <p class="card__body">
+            算法与 AI 作为创作媒介和创作伙伴：生成式艺术、创意编程、交互装置与数据可视化创作，
+            以及人机共创中的作者身份与算法美学问题。
+          </p>
+          <div class="card__meta"><span class="tag">交互装置</span><span class="tag tag--muted">数据可视化</span><span class="tag tag--muted">策展</span></div>
+        </div>
+
+        <div class="card">
+          <div class="card__num">03</div>
+          <h3 class="card__title">数字人文</h3>
+          <p class="card__body">
+            把计算方法用于人文研究：文本挖掘与远读、文化遗产数字化、计量电影学与电影色彩分析，
+            以及闽南文化圈与海洋中国的空间与网络分析。
+          </p>
+          <div class="card__meta"><span class="tag">计量电影学</span><span class="tag tag--muted">闽南文化</span><span class="tag tag--muted">GIS</span></div>
+        </div>
+
+        <div class="card">
+          <div class="card__num">04</div>
+          <h3 class="card__title">网络与新媒体</h3>
+          <p class="card__body">
+            数字平台与网络技术如何构建媒介生态：平台研究、跨媒体叙事、
+            大空间沉浸式 LBE 的媒介属性演化，以及新媒体技术对文化实践的塑造。
+          </p>
+          <div class="card__meta"><span class="tag">平台研究</span><span class="tag tag--muted">沉浸式 LBE</span></div>
+        </div>
+
+        <div class="card">
+          <div class="card__num">05</div>
+          <h3 class="card__title">智能传播</h3>
+          <p class="card__body">
+            算法与 AI 如何重塑信息传播生态：推荐机制与信息茧房、社交网络结构与动力学、
+            计算传播学方法，以及组织内信息上行中的把关与壅蔽。
+          </p>
+          <div class="card__meta"><span class="tag">计算传播</span><span class="tag tag--muted">社交网络分析</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== 精选成果 ====================== -->
+  <section id="selected">
+    <div class="wrap">
+      <h2 class="section-title">精选成果</h2>
+      <ul class="pub-list">
+
+        <li class="pub">
+          <div class="pub__type">会议</div>
+          <div>
+            <div class="pub__title">An LLM-Based Teaching Support System for C-STEAM Courses</div>
+            <div class="pub__authors"><span class="me">Yancong Su</span>, Jiangyi Wang, Wenyu Yang and Xiaonan Wang</div>
+            <div class="pub__venue">IEEE ICCSE 2026, Budapest, Hungary, 07/2026</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub__type">会议</div>
+          <div>
+            <div class="pub__title">From “Wo You” to “Ru Xi”: The Digital Interactive Reconstruction of Ancient Chinese Painting</div>
+            <div class="pub__authors">Minghao Li, <span class="me">Yancong Su</span> and Xiaojuan Xu</div>
+            <div class="pub__venue">ICHEC 2025, Singapore, 11/2025</div>
+            <div class="pub__links"><a href="https://doi.org/10.1145/3786995.3787035" rel="noopener">DOI</a></div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub__type">会议</div>
+          <div>
+            <div class="pub__title">从感官界面到社交场域：大空间沉浸式 LBE 的媒介属性演化路径</div>
+            <div class="pub__authors"><span class="me">苏彦聪</span>, 李明浩, 金兰, 洪朝群</div>
+            <div class="pub__venue">福建省传播学会 2025 年学术年会, 泉州, 2025 年 11 月 · 青年学者论文评比三等奖</div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub__type">期刊</div>
+          <div>
+            <div class="pub__title">Generating Photomosaics with QR Code Capability</div>
+            <div class="pub__authors">Chin-Lin Li, <span class="me">Yancong Su</span> and Ran-Zan Wang</div>
+            <div class="pub__venue">Mathematics, 2020, 8(9), 1613</div>
+            <div class="pub__links"><a href="https://doi.org/10.3390/math8091613" rel="noopener">DOI</a></div>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub__type">期刊</div>
+          <div>
+            <div class="pub__title">A Study on Human Gait Analysis and its Application to Human Attribute Recognition</div>
+            <div class="pub__authors"><span class="me">Yancong Su</span> and Hajime Murao</div>
+            <div class="pub__venue">ICIC Express Letters, 2015, 9(5): 1427–1433</div>
+          </div>
+        </li>
+
+      </ul>
+
+      <p style="margin-top:1.5rem"><a href="publications.html">查看全部研究成果 →</a></p>
+    </div>
+  </section>
+
+  <!-- ====================== 近期动态 ====================== -->
+  <section id="news">
+    <div class="wrap">
+      <h2 class="section-title">近期动态</h2>
+      <ul class="timeline">
+        <li>
+          <div class="timeline__when">2026-07</div>
+          <div class="timeline__what">
+            <strong>论文被 IEEE ICCSE 2026 接收</strong>
+            <span>An LLM-Based Teaching Support System for C-STEAM Courses，布达佩斯。</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline__when">2026-03</div>
+          <div class="timeline__what">
+            <strong>论文发表于 ICEIT 2026</strong>
+            <span>生成式 AI 时代面向编程入门教育的结构化协作学习系统，西安。</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline__when">2025-12</div>
+          <div class="timeline__what">
+            <strong>主持校级智慧课程立项</strong>
+            <span>《数字智能媒体技术实务》。</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline__when">2025-11</div>
+          <div class="timeline__what">
+            <strong>获福建省传播学会 2025 年学术年会青年学者论文评比三等奖</strong>
+            <span>大空间沉浸式 LBE 的媒介属性演化路径。</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline__when">2025-10</div>
+          <div class="timeline__what">
+            <strong>指导作品《星枢时韵》获国家赛一等奖</strong>
+            <span>第十三届全国大学生数字媒体科技作品及创意竞赛。</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====================== 学术兼职 ====================== -->
+  <section id="service">
+    <div class="wrap">
+      <h2 class="section-title">学术兼职</h2>
+      <ul class="roles">
+        <li><span class="org">中国计算机学会青年计算机科技论坛厦门分论坛（YOCSEF Xiamen）</span><span class="post">主席（2025–2026）</span></li>
+        <li><span class="org">中国计算机学会</span><span class="post">高级会员</span></li>
+        <li><span class="org">中国计算机学会 计算艺术分会</span><span class="post">执行委员</span></li>
+        <li><span class="org">中国计算机学会 厦门分部</span><span class="post">A 类委员（2024–2026）</span></li>
+        <li><span class="org">中国科协 科普中国</span><span class="post">专家</span></li>
+        <li><span class="org">中国人工智能学会</span><span class="post">会员</span></li>
+        <li><span class="org">日本系统控制信息学会</span><span class="post">会员</span></li>
+        <li><span class="org">厦门市机器人系统与数字制造重点实验室</span><span class="post">成员</span></li>
+        <li><span class="org">闽侨智库厦门理工学院研究中心</span><span class="post">成员</span></li>
+      </ul>
+      <p style="margin-top:1.25rem"><a href="cv.html#service">社会兼职与荣誉表彰见简历 →</a></p>
+    </div>
+  </section>
+
+  <!-- ====================== 开源项目 ====================== -->
+  <section id="projects">
+    <div class="wrap wrap--wide">
+      <h2 class="section-title">开源项目</h2>
+      <div class="cards">
+
+        <a class="card" href="https://www.gitlink.org.cn/suyancong/china-film-awards-cinemetrics" rel="noopener">
+          <h3 class="card__title">china-film-awards-cinemetrics</h3>
+          <p class="card__body">中国电影三大奖作品镜头与色彩计量数据集。以平均镜头长度、剪辑节奏、色彩分布等形式指标刻画影片风格。</p>
+          <div class="card__meta"><span class="tag tag--muted">Python</span></div>
+        </a>
+
+        <a class="card" href="https://www.gitlink.org.cn/suyancong/TSZQ_ChaoSuanKaiYuanSheQu" rel="noopener">
+          <h3 class="card__title">TSZQ_ChaoSuanKaiYuanSheQu</h3>
+          <p class="card__body">超算开源社区专区对应项目。</p>
+          <div class="card__meta"><span class="tag tag--muted">Markdown</span></div>
+        </a>
+
+        <a class="card" href="https://www.gitlink.org.cn/suyancong/gitlink-cli" rel="noopener">
+          <h3 class="card__title">gitlink-cli</h3>
+          <p class="card__body">GitLink 平台命令行工具，用于仓库、Issue、PR 与流水线的自动化操作。</p>
+          <div class="card__meta"><span class="tag tag--muted">Go</span></div>
+        </a>
+
+        <a class="card" href="https://www.gitlink.org.cn/suyancong/suyancong.gitlink.net" rel="noopener">
+          <h3 class="card__title">suyancong.gitlink.net</h3>
+          <p class="card__body">你正在看的这个站点。纯静态、无构建，推送到 master 由 GitLink Pages 自动部署。</p>
+          <div class="card__meta"><span class="tag tag--muted">HTML</span></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== 联系 ====================== -->
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="section-title">联系</h2>
+      <p>
+        欢迎就人文智能、计算艺术、数字人文相关的研究合作、学生指导或讲座交流来信；
+        数据集与工具的具体问题，也可以直接到对应仓库提 Issue。
+      </p>
+      <div class="btn-row" style="margin-top:1.25rem">
+        <a class="btn btn--primary" href="mailto:syc@xmut.edu.cn">syc@xmut.edu.cn</a>
+        <a class="btn" href="https://www.gitlink.org.cn/suyancong" rel="noopener">GitLink @suyancong</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 苏彦聪 Yancong Su · 厦门理工学院影视与传播学院</span>
+    <span class="site-footer__links">
+      <a href="mailto:syc@xmut.edu.cn">syc@xmut.edu.cn</a>
+      <a href="https://www.gitlink.org.cn/suyancong" rel="noopener">GitLink</a>
+      <a href="https://www.gitlink.org.cn/suyancong/suyancong.gitlink.net" rel="noopener">本站源码</a>
+    </span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
