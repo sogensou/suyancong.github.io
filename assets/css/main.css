@@ -306,12 +306,21 @@ section + section { border-top: 1px solid var(--border); }
    -------------------------------------------------------------------------- */
 .hero { padding-block: 4.5rem 3.5rem; }
 
+/* 栅格区域布局：桌面端头像在右侧跨两行；窄屏时头像仍与姓名并排，
+   简介／信息／按钮整行落到下面，而不是被挤成一列后掉到最底部 */
 .hero__grid {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 2.5rem;
+  grid-template-areas:
+    "head   avatar"
+    "body   avatar";
+  column-gap: 2.5rem;
+  row-gap: 0;
   align-items: start;
 }
+.hero__head   { grid-area: head; }
+.hero__avatar { grid-area: avatar; }
+.hero__body   { grid-area: body; }
 
 .hero__name {
   font-size: clamp(2rem, 5vw, 2.75rem);
@@ -365,8 +374,13 @@ section + section { border-top: 1px solid var(--border); }
 
 @media (max-width: 40rem) {
   .hero { padding-block: 3rem 2.5rem; }
-  .hero__grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .hero__avatar { width: 112px; height: 112px; }
+  .hero__grid {
+    grid-template-areas:
+      "head avatar"
+      "body body";
+    column-gap: 1.25rem;
+  }
+  .hero__avatar { width: 96px; height: 96px; }
 }
 
 /* --------------------------------------------------------------------------
