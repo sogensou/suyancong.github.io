@@ -373,14 +373,20 @@ section + section { border-top: 1px solid var(--border); }
 }
 
 @media (max-width: 40rem) {
-  .hero { padding-block: 3rem 2.5rem; }
+  /* 上内边距收紧，让头像贴近导航下方的分割线 */
+  .hero { padding-block: 1.25rem 2.5rem; }
   .hero__grid {
     grid-template-areas:
       "head avatar"
       "body body";
     column-gap: 1.25rem;
   }
-  .hero__avatar { width: 96px; height: 96px; }
+  /* 头像顶部对齐、姓名块底部对齐 —— 头像在右上、姓名在左下，两者底边齐平 */
+  .hero__avatar { align-self: start; width: 104px; height: 104px; }
+  .hero__head { align-self: end; }
+  /* 姓名块尾部的外边距移交给正文，否则底部对齐时会多出一截空白 */
+  .hero__name-en { margin-bottom: 0; }
+  .hero__body { margin-top: 1.35rem; }
 }
 
 /* --------------------------------------------------------------------------
