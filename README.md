@@ -62,9 +62,9 @@ curl -s http://suyancong.gitlink.net | grep -o '<title>.*</title>'
     ├── css/main.css    全站唯一样式表（设计令牌 + 组件）
     ├── js/main.js      三件事：主题切换、导航高亮、页脚更新时间
     ├── img/
-    │   ├── avatar.png            首页头像 400×400
-    │   ├── favicon.png           浏览器标签页图标 64×64（裁紧到脸部）
-    │   └── apple-touch-icon.png  iOS 添加到主屏图标 180×180
+    │   ├── avatar.png            首页头像 400×400（插画版证件照）
+    │   ├── favicon.png           浏览器标签页图标 32×32（GitLink 线描头像）
+    │   └── apple-touch-icon.png  iOS 添加到主屏图标 180×180（同上）
     └── files/          放 PDF 全文、简历附件等
 ```
 
@@ -133,13 +133,22 @@ python3 -m http.server 8765
 
 同理，**学术兼职在 `index.html` 和 `cv.html` 里各有一份**，改一处记得同步另一处。
 
-### 换头像
+### 换头像与图标
 
-替换 `assets/img/avatar.png`（正方形，400×400 左右即可）。
-标签页图标是另外两个文件（`favicon.png` / `apple-touch-icon.png`），
-它们裁得更紧、只留脸部，这样缩到 16px 还认得出来——换头像时记得一并重做。
+**首页头像**：替换 `assets/img/avatar.png`（正方形，400×400 左右即可）。
 
-三张图的背景都是站点浅色背景 `#fbfaf8`，所以浅色主题下头像和页面是连成一片的。
+**标签页图标**：`favicon.png` / `apple-touch-icon.png` 用的是另一张源图——
+GitLink 上那张黑白线描头像，比插画版更抗缩小。两者互相独立，换其中一个不影响另一个。
+
+favicon 做成 **32×32**：2x 屏的标签页正好原生显示 32px，1x 屏由浏览器降到 16px。
+线描的笔画很细，直接缩会被平均成灰雾，所以缩放前先用 `MinFilter(21)` 把黑线加粗一档
+（`apple-touch-icon` 有 180px 空间，不需要加粗）。16px 下依然偏软，这是线描本身的限制，
+换素材时别指望调参数能解决。
+
+三张图的背景都填成站点浅色背景 `#fbfaf8`，所以浅色主题下头像和页面是连成一片的。
+
+> 换完图标后浏览器多半还显示旧的——favicon 缓存比普通资源顽固得多，
+> 硬刷新（`Cmd+Shift+R`）或换个标签页打开才看得到。
 
 ### 配色与排版
 
