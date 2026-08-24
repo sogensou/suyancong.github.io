@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <!-- 首帧就套用已保存的主题，避免深色模式下白屏闪一下 -->
 <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<link rel="stylesheet" href="assets/css/main.css?v=20260824">
+<link rel="stylesheet" href="assets/css/main.css?v=20260825">
 </head>
 <body>
 <a class="skip-link" href="#main">跳到主要内容</a>
@@ -111,12 +111,14 @@
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <p>© 2026 苏彦聪 Yancong Su</p>
     <!-- 更新时间由 main.js 从 HTTP Last-Modified 填入；没有脚本时整行不显示，避免给出过期日期 -->
-    <p class="site-footer__updated" hidden>本站最近更新时间：<time id="site-updated"></time></p>
+    <p class="site-footer__updated" hidden>本页面最后更新于 <time id="site-updated"></time></p>
+    <p class="site-footer__license">除非另有注明，页面内容采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" rel="license noopener">CC BY-NC-SA</a>（知识共享 署名—非商业性使用—相同方式共享）协议授权</p>
+    <p class="site-footer__credit">🤝 本站由 苏彦聪 与 AI 助理 Claude（Anthropic）协作建置与维护</p>
+    <p class="site-footer__credit" lang="en">Collaboratively built &amp; maintained by Yancong Su with AI assistant Claude (Anthropic)</p>
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20260824"></script>
+<script src="assets/js/main.js?v=20260825"></script>
 </body>
 </html>

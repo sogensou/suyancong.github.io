@@ -42,10 +42,16 @@
     var d = new Date(document.lastModified);
     if (!isNaN(d.getTime()) && d.getFullYear() >= 2000) {
       var pad = function (n) { return n < 10 ? "0" + n : "" + n; };
-      var day =
-        d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
-      stamp.textContent = day + " " + pad(d.getHours()) + ":" + pad(d.getMinutes());
-      stamp.setAttribute("datetime", day);
+      var week = ["日", "一", "二", "三", "四", "五", "六"];
+      /* 展示用中文长格式，datetime 属性仍留 ISO 供机器读取 */
+      stamp.textContent =
+        d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日" +
+        " (星期" + week[d.getDay()] + ") " +
+        pad(d.getHours()) + ":" + pad(d.getMinutes());
+      stamp.setAttribute(
+        "datetime",
+        d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate())
+      );
       stamp.parentNode.hidden = false;
     }
   }
