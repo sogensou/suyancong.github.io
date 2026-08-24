@@ -693,11 +693,15 @@ a.card:hover {
 .site-footer__license a { color: var(--text-2); text-decoration: underline; }
 .site-footer__license a:hover { color: var(--accent); }
 
-/* 协作署名：中英两行，比上方再轻一档 */
+/* 协作署名：中英两行，比上方再轻一档；人名加粗并提亮一档以便识别 */
 .site-footer__credit {
   font-size: 0.78rem;
   color: var(--text-3);
 }
+.site-footer__credit strong { font-weight: 650; color: var(--text-2); }
+.site-footer__credit a { color: inherit; text-decoration: none; }
+.site-footer__credit a:hover strong { color: var(--accent); }
+.site-footer__credit a:hover { text-decoration: underline; }
 .site-footer__credit[lang="en"] {
   letter-spacing: 0.01em;
   opacity: 0.9;
