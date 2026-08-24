@@ -18,7 +18,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 VER="${1:-$(date +%Y%m%d)}"
-OLD=$(grep -ho 'main\.css?v=[0-9]*' index.html | head -1 | sed 's/.*v=//')
+OLD=$(grep -ho 'main\.css?v=[0-9a-zA-Z]*' index.html | head -1 | sed 's/.*v=//')
 
 if [ "$OLD" = "$VER" ]; then
   echo "版本号已经是 $VER，未改动。"

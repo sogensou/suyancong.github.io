@@ -687,7 +687,7 @@ a.card:hover {
 .site-footer p { margin: 0; line-height: 1.9; }
 .site-footer p + p { margin-top: 0.3rem; }
 
-.site-footer__updated time { color: var(--text-2); }
+.site-footer__updated time { color: var(--text-2); font-weight: 650; }
 
 .site-footer__license { font-size: 0.8rem; }
 .site-footer__license a { color: var(--text-2); text-decoration: underline; }
