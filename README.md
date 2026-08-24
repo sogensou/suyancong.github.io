@@ -58,6 +58,7 @@ curl -s http://suyancong.gitlink.net | grep -o '<title>.*</title>'
 ├── research.html       科研项目：纵向课题 · 横向项目 · 教研教改
 ├── teaching.html       教学：主讲课程 · 学位论文 · 毕业设计 · 学科竞赛 · 大创项目
 ├── cv.html             简历：学习经历 · 工作经验 · 学术兼职 · 社会兼职 · 荣誉表彰
+├── bump-version.sh     改完样式后跑一下，更新 CSS/JS 的版本号（见下）
 └── assets/
     ├── css/main.css    全站唯一样式表（设计令牌 + 组件）
     ├── js/main.js      三件事：主题切换、导航高亮、页脚更新时间
@@ -90,6 +91,30 @@ GitLink Pages 会把该头设为部署时间，所以推一次就自动刷新。
 图标是内联 SVG。直接改 HTML 就是改网站。
 
 ---
+
+### 改完样式必须跑 `bump-version.sh`
+
+GitLink Pages 只发 `Cache-Control: public`、不带 `max-age`，浏览器按自己的
+启发式规则缓存。改完样式直接推送的话，回访的人可能拿到**新 HTML + 旧 CSS**，
+页面会以比原样更难看的方式错位（栅格区域名对不上时，元素会被自动丢到最末尾）。
+
+所以 CSS 与 JS 的引用都带版本号：
+
+```html
+<link rel="stylesheet" href="assets/css/main.css?v=20260824">
+<script src="assets/js/main.js?v=20260824"></script>
+```
+
+改过 `assets/css/main.css` 或 `assets/js/main.js` 之后、提交之前跑一下：
+
+```bash
+./bump-version.sh
+```
+
+它会把 5 个页面里的版本号一起换成今天的日期。同一天内多次改样式，
+加个后缀区分：`./bump-version.sh 20260824b`。
+
+**只改 HTML 内容不用跑**——HTML 本身不带版本号，每次都会重新请求。
 
 ## 本地预览
 
@@ -153,6 +178,7 @@ favicon 做成 **32×32**：2x 屏的标签页正好原生显示 32px，1x 屏�
 ### 配色与排版
 
 全部集中在 `assets/css/main.css` 第 1 节的设计令牌里，改那几个变量就能换肤。
+⚠️ 改完记得跑 `./bump-version.sh`，否则回访的人还会看到旧样式。
 深浅两套色值分别定义在 `:root`、`@media (prefers-color-scheme: dark)` 和
 `:root[data-theme="dark"]` 三处，改配色时三处都要顾到。
 
