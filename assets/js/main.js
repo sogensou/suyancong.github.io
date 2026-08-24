@@ -50,6 +50,32 @@
     }
   }
 
+  /* ---- 微信二维码浮层 --------------------------------------------------- */
+  /* 点「微信联系」展开，点二维码或背景任意处收起，Esc 也能关。 */
+  var wxBtn = document.getElementById("wechat-btn");
+  var wxBox = document.getElementById("wechat-qr");
+
+  if (wxBtn && wxBox) {
+    var setOpen = function (open) {
+      wxBox.hidden = !open;
+      wxBtn.setAttribute("aria-expanded", String(open));
+      if (!open) wxBtn.focus();
+    };
+
+    wxBtn.addEventListener("click", function () {
+      setOpen(wxBox.hidden);
+    });
+
+    /* 浮层内任意位置都可关闭——二维码本身也算 */
+    wxBox.addEventListener("click", function () {
+      setOpen(false);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !wxBox.hidden) setOpen(false);
+    });
+  }
+
   /* ---- 当前页导航高亮 ------------------------------------------------- */
   var here = location.pathname.replace(/\/$/, "/index.html").split("/").pop();
   Array.prototype.forEach.call(
