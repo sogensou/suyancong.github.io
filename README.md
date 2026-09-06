@@ -58,6 +58,7 @@ curl -s http://suyancong.gitlink.net | grep -o '<title>.*</title>'
 ├── research.html       科研项目：纵向课题 · 横向项目 · 教研教改
 ├── teaching.html       教学：主讲课程 · 学位论文 · 毕业设计 · 学科竞赛 · 大创项目
 ├── cv.html             简历：学习经历 · 工作经验 · 学术兼职 · 社会兼职 · 荣誉表彰
+├── course-*.html       课程页，每门课一个（现有：course-ai-practice.html）
 ├── bump-version.sh     改完样式后跑一下，更新 CSS/JS 的版本号（见下）
 └── assets/
     ├── css/main.css    全站唯一样式表（设计令牌 + 组件）
@@ -111,8 +112,8 @@ GitLink Pages 只发 `Cache-Control: public`、不带 `max-age`，浏览器按�
 ./bump-version.sh
 ```
 
-它会把 5 个页面里的版本号一起换成今天的日期。同一天内多次改样式，
-加个后缀区分：`./bump-version.sh 20260824b`。
+它会把根目录下所有 HTML 页面的版本号一起换成今天的日期——脚本 glob 的是 `*.html`，
+新加的页面会自动带上。同一天内多次改样式，加个后缀区分：`./bump-version.sh 20260824b`。
 
 **只改 HTML 内容不用跑**——HTML 本身不带版本号，每次都会重新请求。
 
@@ -151,10 +152,30 @@ python3 -m http.server 8765
 - 课程、毕业设计 → `.courses` 列表
 - 主持 / 参与用 `<span class="role">主持</span>` 和 `<span class="role role--minor">参与</span>` 区分
 
+### 加一个课程页
+
+课程详情单独成页，放**根目录**、命名 `course-<课程>.html`（如 `course-ai-practice.html`）。
+放根目录是有意的：`bump-version.sh` 只 glob 根目录的 `*.html`，塞进子目录就漏掉版本号，
+`assets/` 的相对路径也得跟着改。
+
+复制 `course-ai-practice.html` 改内容即可，三个要点：
+
+1. **导航高亮要手写。** `main.js` 按文件名给 `.nav__links` 加 `aria-current`，课程页的
+   文件名跟五个主页面都对不上，所以要在「教学」那条上写死 `aria-current="page"`——
+   脚本只会加这个属性、不会去掉，不冲突。
+2. **`.toc` 第一项放返回链接**（`<a href="teaching.html">← 教学</a>`），顺带让紧随其后的
+   `.section-title` 上边距归零，见「分割线的约定」。
+3. **别为课程页新写 CSS。** 现成组件够用：`.stats` 摆课时数、`.roles` 摆课程信息（标签左、
+   值右）、`.timeline` 摆按次编排的教学安排——`.timeline__what` 里还能再嵌一层 `.courses`，
+   列出每次课的两个课时。一旦动了样式表就得跑 `bump-version.sh`。
+
+最后回 `teaching.html` 把课程那条的链接指过来，链接文字用年份（如 `2026`）；
+内部链接不用写 `rel="noopener"`。
+
 ### 改导航或页脚
 
-⚠️ **导航栏和页脚在 5 个 HTML 文件里各有一份**，这是"零构建"的代价。
-增删导航项、改页脚信息时，5 个文件都要改，别漏。
+⚠️ **导航栏和页脚在每个 HTML 文件里各有一份**（目前 6 个：五个主页面 + 一个课程页），
+这是"零构建"的代价。增删导航项、改页脚信息时，根目录下所有 `*.html` 都要改，别漏。
 
 同理，**学术兼职在 `index.html` 和 `cv.html` 里各有一份**，改一处记得同步另一处。
 
