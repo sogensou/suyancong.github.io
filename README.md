@@ -58,7 +58,7 @@ curl -s http://suyancong.gitlink.net | grep -o '<title>.*</title>'
 ├── research.html       科研项目：纵向课题 · 横向项目 · 教研教改
 ├── teaching.html       教学：主讲课程 · 学位论文 · 毕业设计 · 学科竞赛 · 大创项目
 ├── cv.html             简历：学习经历 · 工作经验 · 学术兼职 · 社会兼职 · 荣誉表彰
-├── course-*.html       课程页，每门课一个（现有：course-ai-practice.html）
+├── course-*.html       课程页，每门课一个（现有：course-ai-practice.html、course-web-design.html）
 ├── bump-version.sh     改完样式后跑一下，更新 CSS/JS 的版本号（见下）
 └── assets/
     ├── css/main.css    全站唯一样式表（设计令牌 + 组件）
@@ -174,7 +174,7 @@ python3 -m http.server 8765
 
 ### 改导航或页脚
 
-⚠️ **导航栏和页脚在每个 HTML 文件里各有一份**（目前 6 个：五个主页面 + 一个课程页），
+⚠️ **导航栏和页脚在每个 HTML 文件里各有一份**（目前 7 个：五个主页面 + 两个课程页），
 这是"零构建"的代价。增删导航项、改页脚信息时，根目录下所有 `*.html` 都要改，别漏。
 
 同理，**学术兼职在 `index.html` 和 `cv.html` 里各有一份**，改一处记得同步另一处。
